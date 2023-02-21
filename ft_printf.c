@@ -6,7 +6,7 @@
 /*   By: sdiaz-ru <sdiaz-ru@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 10:42:52 by sdiaz-ru          #+#    #+#             */
-/*   Updated: 2023/02/21 13:53:43 by sdiaz-ru         ###   ########.fr       */
+/*   Updated: 2023/02/21 17:10:03 by sdiaz-ru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,9 @@ int	ft_printf(char const *str, ...)
 	len = &i;
 	i = -1;
 	while (str[++i])
-	{
 		ft_switch(str, len, ptr);
-	}
 	va_end(ptr);
-	return (1);
+	return (i);
 }
 
 void	ft_switch(char const *str, int *len, va_list ptr)
@@ -37,9 +35,9 @@ void	ft_switch(char const *str, int *len, va_list ptr)
 	{
 		(*len)++;
 		if (str[*len] == 'c')
-			write(1, va_arg(ptr, char *), 1);
+			ft_putchar(va_arg(ptr, int));
 		else if (str[*len] == 's')
-			write(1, "s", 1);
+			ft_putstr(va_arg(ptr, char *));
 		else if (str[*len] == 'p')
 			write(1, "p", 1);
 		else if (str[*len] == 'd')
@@ -52,5 +50,22 @@ void	ft_switch(char const *str, int *len, va_list ptr)
 			write(1, "x", 1);
 		else if (str[*len] == 'X')
 			write(1, "X", 1);
+	}
+}
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_putstr(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		write(1, &s[i], 1);
+		i++;
 	}
 }
