@@ -6,7 +6,7 @@
 #    By: sdiaz-ru <sdiaz-ru@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 11:10:38 by sdiaz-ru          #+#    #+#              #
-#    Updated: 2023/02/21 12:43:38 by sdiaz-ru         ###   ########.fr        #
+#    Updated: 2023/02/22 10:44:51 by sdiaz-ru         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,9 @@ RM				=	rm -fr
 
 INCLUDE			=	ft_printf.h
 
-SRC				=	ft_printf.c
+SRC				=	ft_printf.c \
+					ft_itoa.c	\
+					ft_writes.c
 
 OBJ				=	$(SRC:.c=.o)
 
@@ -35,8 +37,7 @@ c:
 d:
 			gcc -g3 $(CFLAGS) main.c $(SRC) -o $(COMPILE_NAME)
 
-re:
-		fclean all
+re:		fclean all
 
 clean: 
 		$(RM) $(OBJ)
@@ -47,4 +48,4 @@ bugclean:
 fclean:		clean bugclean
 			$(RM) $(NAME)
 
-.PHONY: 	all re clean fclean bonus
+.PHONY: 	all re clean fclean c d

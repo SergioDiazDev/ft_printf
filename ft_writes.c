@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_writes.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdiaz-ru <sdiaz-ru@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/21 10:43:11 by sdiaz-ru          #+#    #+#             */
-/*   Updated: 2023/02/22 10:41:12 by sdiaz-ru         ###   ########.fr       */
+/*   Created: 2023/02/22 10:39:49 by sdiaz-ru          #+#    #+#             */
+/*   Updated: 2023/02/22 10:41:29 by sdiaz-ru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <unistd.h>
-# include <stdio.h>
-# include <stdarg.h>
-# include <stdlib.h>
+#include "ft_printf.h"
 
-void	ft_putchar(char c);
-void	ft_putstr(char *s);
-void	ft_putnbr(int n);
-char	*ft_loadstr(long n, long size);
-char	*ft_itoa(int n);
-int		ft_printf(char const *str, ...);
-void	ft_switch(char const *str, int *len, va_list ptr);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
-#endif
+void	ft_putstr(char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		write(1, &s[i], 1);
+		i++;
+	}
+}
+
+void	ft_putnbr(int n)
+{
+	char		*s;
+
+	s = ft_itoa(n);
+	ft_putstr(s);
+	free(s);
+}
