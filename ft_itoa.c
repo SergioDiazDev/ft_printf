@@ -6,7 +6,7 @@
 /*   By: sdiaz-ru <sdiaz-ru@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 10:25:14 by sdiaz-ru          #+#    #+#             */
-/*   Updated: 2023/02/22 10:25:31 by sdiaz-ru         ###   ########.fr       */
+/*   Updated: 2023/02/22 16:39:06 by sdiaz-ru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_loadstr(long n, long size)
 	return (str);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(long n)
 {
 	long		size;
 	long		aux;

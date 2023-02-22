@@ -6,7 +6,7 @@
 /*   By: sdiaz-ru <sdiaz-ru@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 10:42:52 by sdiaz-ru          #+#    #+#             */
-/*   Updated: 2023/02/22 16:22:50 by sdiaz-ru         ###   ########.fr       */
+/*   Updated: 2023/02/22 16:37:30 by sdiaz-ru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ void	ft_switch(char const *str, int *len, va_list ptr)
 		else if (str[*len] == 's')
 			ft_putstr(va_arg(ptr, char *));
 		else if (str[*len] == 'p')
-			write(1, "p", 1);
+			ft_putptr(va_arg(ptr, unsigned long), "0123456789abcdef");
 		else if (str[*len] == 'd')
-			ft_putnbr(va_arg(ptr, int));
+			ft_putnbr(va_arg(ptr, long));
 		else if (str[*len] == 'i')
-			ft_putnbr(va_arg(ptr, int));
+			ft_putnbr(va_arg(ptr, long));
 		else if (str[*len] == 'u')
 			ft_putbase(va_arg(ptr, unsigned int), "0123456789");
 		else if (str[*len] == 'x')
