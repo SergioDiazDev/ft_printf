@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putbase.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdiaz-ru <sdiaz-ru@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/21 10:43:24 by sdiaz-ru          #+#    #+#             */
-/*   Updated: 2023/02/22 15:43:38 by sdiaz-ru         ###   ########.fr       */
+/*   Created: 2023/02/22 10:49:52 by sdiaz-ru          #+#    #+#             */
+/*   Updated: 2023/02/22 15:41:50 by sdiaz-ru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	main(void)
+void	ft_putbase(long num, char *base)
 {
-	ft_putbase(42, "0123456789\0");
-	// char a = 'a';
-	// char str[4] = "asd\0";
-	// int num = -500;
-	// printf("\n");
-	// ft_printf("hol%c %s %d", a, str, num);
-	// printf("\n\n");
-	//system("leaks main.out");
+	int		lenbase;
+	//long	aux;
+
+	lenbase = ft_strlen(base);
+	if ((num / lenbase) < 1)
+		ft_putchar(base[num]);
+	else
+	{
+		ft_putbase(num / lenbase, base);
+		ft_putchar(base[num % lenbase]);
+	}
+}
+
+int	ft_strlen(char *str)
+{
+	int i;
+
+	i = 0;
+	while(str[i])
+		i++;
+	return (i);
 }

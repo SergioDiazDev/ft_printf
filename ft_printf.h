@@ -6,7 +6,7 @@
 /*   By: sdiaz-ru <sdiaz-ru@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 10:43:11 by sdiaz-ru          #+#    #+#             */
-/*   Updated: 2023/02/22 10:41:12 by sdiaz-ru         ###   ########.fr       */
+/*   Updated: 2023/02/22 13:17:04 by sdiaz-ru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ char	*ft_loadstr(long n, long size);
 char	*ft_itoa(int n);
 int		ft_printf(char const *str, ...);
 void	ft_switch(char const *str, int *len, va_list ptr);
+void	ft_putbase(long num, char *base);
+int		ft_strlen(char *str);
 
 #endif
