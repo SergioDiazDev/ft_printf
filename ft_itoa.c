@@ -57,5 +57,5 @@ char	*ft_itoa(long n)
 		aux = aux / 10;
 		size++;
 	}
-	return (ft_loadstr((long)n, size));
+	return (ft_loadstr(n, size));
 }

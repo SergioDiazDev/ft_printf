@@ -31,6 +31,8 @@ void	ft_putstr(char *s, int *count)
 			i++;
 		}
 	}
+	else
+		ft_putstr("(null)", count);
 }
 
 void	ft_putnbr(long n, int *count)
