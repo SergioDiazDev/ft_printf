@@ -6,34 +6,38 @@
 /*   By: sdiaz-ru <sdiaz-ru@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 10:39:49 by sdiaz-ru          #+#    #+#             */
-/*   Updated: 2023/02/22 16:38:04 by sdiaz-ru         ###   ########.fr       */
+/*   Updated: 2023/02/22 16:50:44 by sdiaz-ru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c)
+void	ft_putchar(char c, int *count)
 {
 	write(1, &c, 1);
+	(*count)++;
 }
 
-void	ft_putstr(char *s)
+void	ft_putstr(char *s, int *count)
 {
 	int	i;
 
 	i = 0;
-	while (s[i])
+	if (s)
 	{
-		write(1, &s[i], 1);
-		i++;
+		while (s[i])
+		{
+			ft_putchar(s[i], count);
+			i++;
+		}
 	}
 }
 
-void	ft_putnbr(long n)
+void	ft_putnbr(long n, int *count)
 {
 	char		*s;
 
 	s = ft_itoa(n);
-	ft_putstr(s);
+	ft_putstr(s, count);
 	free(s);
 }
