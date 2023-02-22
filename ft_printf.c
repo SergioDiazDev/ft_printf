@@ -53,9 +53,9 @@ void	ft_switch(char const *str, int *len, va_list ptr, int *count)
 		else if (str[*len] == 'u')
 			ft_putbase(va_arg(ptr, unsigned int), "0123456789\0", count);
 		else if (str[*len] == 'x')
-			ft_putbase(va_arg(ptr, long), "0123456789abcdef\0", count);
+			ft_putbase(va_arg(ptr, unsigned int), "0123456789abcdef\0", count);
 		else if (str[*len] == 'X')
-			ft_putbase(va_arg(ptr, long), "0123456789ABCDEF\0", count);
+			ft_putbase(va_arg(ptr, unsigned int), "0123456789ABCDEF\0", count);
 		else if (str[*len] == '%')
 			ft_putchar('%', count);
 	}
