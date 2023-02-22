@@ -22,8 +22,9 @@ int	main(void)
 	// unsigned int u = 747385742;
 	// int x= 42;
 	// int X= 42;
+	long a = -100;
 	printf("\n");
-	ft_printf(" %x %x %x %x %x %x %x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	ft_printf(" %x %x %x %x %x %x %x", INT_MAX, INT_MIN, LONG_MAX, a , ULONG_MAX, 0, -42);
 	printf("\n\n");
-	system("leaks main.out");
+	//system("leaks main.out");
 }
