@@ -6,7 +6,7 @@
 /*   By: sdiaz-ru <sdiaz-ru@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 10:39:49 by sdiaz-ru          #+#    #+#             */
-/*   Updated: 2023/02/22 10:41:29 by sdiaz-ru         ###   ########.fr       */
+/*   Updated: 2023/02/22 16:38:04 by sdiaz-ru         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_putstr(char *s)
 	}
 }
 
-void	ft_putnbr(int n)
+void	ft_putnbr(long n)
 {
 	char		*s;
 
