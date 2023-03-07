@@ -6,7 +6,7 @@
 #    By: sdiaz-ru <sdiaz-ru@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/21 11:10:38 by sdiaz-ru          #+#    #+#              #
-#    Updated: 2023/02/22 15:20:07 by sdiaz-ru         ###   ########.fr        #
+#    Updated: 2023/03/07 17:20:14 by sdiaz-ru         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,5 @@ bugclean:
 
 fclean:		clean bugclean
 			@$(RM) $(NAME)
-			@echo Todo limpio
 
 .PHONY: 	all re clean fclean c d
